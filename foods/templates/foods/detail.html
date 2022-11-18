@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+   <br><br>
+
+    <img src="{{ food.photo.url }}" alt="{{ food.name }}" width="400px"><br>
+     {{ food.name }}
+    {{ food.description }}<br>
+    امتیاز :{{ food.rate }}
+{% endblock %}
