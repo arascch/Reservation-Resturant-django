@@ -1,12 +1,16 @@
 from django.shortcuts import render , get_object_or_404
 from .models import Blog , Tag , Category , Comments
 from .forms import CommentForm
+from django.core.paginator import Paginator
 
 
 # Create your views here.
 
 def blog_list(request):
     blogs = Blog.objects.all()
+    paginator = Paginator(blogs, 3)
+    page_number = request.GET.get('page')
+    blogs = paginator.get_page(page_number)
 
     context = {
         "blogs" : blogs,
