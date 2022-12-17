@@ -59,3 +59,9 @@ def blog_category(request , category):
         "blogs": blogs
     }
     return render(request, "blog/blog_list.html", context)
+
+def search(request):
+    if request.method == "GET":
+        q = request.GET.get("search")
+    blogs = Blog.objects.filter(title__icontains=q)
+    return render(request, "blog/blog_list.html",{"blogs":blogs})
