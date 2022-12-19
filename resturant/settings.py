@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'reservation.apps.ReservationConfig',
     'blog.apps.BlogConfig',
     'contact.apps.ContactConfig',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
