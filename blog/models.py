@@ -1,12 +1,13 @@
 from django.db import models
 from django.utils.translation import gettext as _
 from django.contrib.auth.models import User
+from ckeditor.fields import RichTextField
 # Create your models here.
 
 class Blog(models.Model):
     title = models.CharField(_("عنوان") , max_length= 50)
     description = models.CharField(_("توضیحات") , max_length=100)
-    content = models.TextField(_("متن"))
+    content = RichTextField()
     created = models.DateTimeField(_("زمان انتشار"), auto_now_add=True)
     author = models.ForeignKey(User , verbose_name=_("نویسنده") , on_delete=models.CASCADE)
     image = models.ImageField(_("تصویر") , upload_to="blog/" , blank=True , null=True)
