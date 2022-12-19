@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'foods.apps.FoodsConfig',
     'reservation.apps.ReservationConfig',
     'blog.apps.BlogConfig',
+    'contact.apps.ContactConfig',
 ]
 
 MIDDLEWARE = [
